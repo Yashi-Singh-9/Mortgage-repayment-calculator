@@ -1,0 +1,367 @@
+@lime: hsl(61, 70%, 52%);
+@white: hsl(0, 0%, 100%);
+@slate-100: hsl(202, 86%, 94%);
+@slate-300: hsl(203, 41%, 72%);
+@slate-500: hsl(200, 26%, 54%);
+@slate-700: hsl(200, 24%, 40%);
+@slate-900: hsl(202, 55%, 16%);
+
+@font-path: "assets/fonts/static";
+
+// Font-face declaration for PlusJakartaSans-Bold
+@font-face {
+  font-family: "PlusJakartaSans-Bold";
+  src: url("@{font-path}/PlusJakartaSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+// Font-face declaration for PlusJakartaSans-Medium
+@font-face {
+  font-family: "PlusJakartaSans-Medium";
+  src: url("@{font-path}/PlusJakartaSans-Medium.ttf") format("truetype");
+  font-weight: 500; 
+  font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "PlusJakartaSans-Medium", sans-serif;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: @slate-100;
+
+    @media (max-width: 780px) {
+        height: auto;
+    }
+}
+
+.wrapper{
+    display: flex;
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: @white;
+
+    @media (max-width: 780px) {
+        flex-direction: column;
+        width: -webkit-fill-available;
+    }
+
+    .calculator-container{
+        max-width: 560px;
+        padding: 40px;
+
+        @media (max-width: 780px) {
+            max-width: none;
+        }
+
+        .calculator-header{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+
+            h2{
+                color: @slate-900;
+                font-family: "PlusJakartaSans-Bold", sans-serif;
+                font-size: 30px;
+            }
+
+            a{
+                color: @slate-500;
+                text-decoration: none;
+                border-bottom: 1px solid @slate-300;
+            }
+        }
+
+        form{
+
+            .loanAmount{
+                margin-bottom: 20px;
+                position: relative;
+
+                label{
+                    display: inline-block;
+                    margin-bottom: 7px;
+                    color: @slate-700;
+                }
+
+                div{
+                    position:  relative;
+
+                    input{
+                        width: 100%;
+                        padding: 10px 6px 10px 54px;
+                        font-size: 18px;
+                        border-radius: 8px;
+                        border: 1px solid @slate-300;
+                        overflow: hidden;
+
+                        &:focus,
+                        &:hover{
+                            outline: none;
+                            border-color: @lime;
+                        }
+
+                        &:focus + span,
+                        &:hover + span{
+                            background-color: @lime;
+                        }
+                    }
+
+                    span{
+                        position: absolute;
+                        left: 1px;
+                        top: 1px;
+                        height: 95%;
+                        background-color: @slate-100;
+                        color: @slate-700;
+                        padding: 7px 13px;
+                        border: 8px;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .loanDetails{
+                display: flex;
+                margin-bottom: 20px;
+                position: relative;
+
+                @media (max-width: 780px) {
+                    flex-direction: column;
+                    gap: 20px;
+                }
+
+                div:nth-child(1){
+                    margin-right: 10px;
+                }
+
+                label{
+                    display: inline-block;
+                    margin-bottom: 7px;
+                    color: @slate-700;
+                }
+
+                input{
+                    width: 100%;
+                    font-size: 18px;
+                    padding: 10px 6px 10px 12px;
+                    border-radius: 8px;
+                    border: 1px solid @slate-300;
+                    overflow: hidden;
+
+                    &:focus,
+                    &:hover{
+                        outline: none;
+                        border-color: @lime;
+                    }
+
+                    &:focus + span,
+                    &:hover + span{
+                        background-color: @lime;
+                    }
+                }
+
+                .details-group{
+                    position: relative;
+
+                    span{
+                        position: absolute;
+                        right: 1px;
+                        top: 1px;
+                        height: 95%;
+                        padding: 7px 13px;
+                        background-color: @slate-100;
+                        border-radius: 0 4px 4px 0;
+                        font-weight: bold;
+                        color: @slate-700;
+                    }
+                }
+            }
+
+            .mortgageOptions{
+                margin-bottom: 20px;
+                
+                p{
+                    margin-bottom: 10px;
+                    color: @slate-700;
+                }
+
+                div{
+                    position: relative;
+                    width: 100%;
+                    height: 47px;
+                    margin-bottom: 30px;
+
+                    label{
+                        border: 1px solid @slate-300;
+                        display: block;
+                        padding: 20px 8px 20px 45px;
+                        cursor: pointer;
+                        border-radius: 8px;
+                        font-weight: bold;
+                        color: @slate-900;
+
+                        &:hover{
+                            border-color: @lime;
+                        }
+                    }
+
+                    input{
+                        position: absolute;
+                        top: 25px;
+                        left: 20px;
+                        accent-color: @lime;
+                    }
+
+                    input:checked + label{
+                        border-color: @lime;
+                        background-color: lighten(@lime, 30%)
+                    }
+                }
+            }
+
+            .action-section{
+                margin-top: 50px;
+                margin-bottom: 20px;
+                position: relative;
+
+                button{
+                    padding: 13px 30px 13px 60px;
+                    border-radius: 40px;
+                    font-size: 18px;
+                    border: none;
+                    cursor: pointer;
+                    background-color: @lime;
+                    transition: all .2s;
+                    color: @slate-900;
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+
+                    &:hover{
+                        background-color: lighten(@lime, 20%);
+                    }
+
+                    @media (max-width: 780px) {
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
+
+    .output-section{
+        width: 500px;
+        background-color: @slate-900;
+        border-radius: 0 0 0 50px;
+
+        @media (max-width: 780px) {
+            width: unset;
+            border-radius: 0;
+        }
+
+        .initial-result{
+            height: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @media (max-width: 780px) {
+                margin: 80px auto;
+            }
+
+            h2{
+                color: @white;
+                margin: 20px auto;
+            }
+
+            p{
+                color: @slate-300;
+                padding: 0 15px;
+                line-height: 1.5;
+
+                @media (max-width: 780px) {
+                    padding: 0 50px;
+                }
+            }
+        }
+
+        .calculated-result{
+            padding: 40px;
+
+            h2{
+                color: @white;
+                font-size: 1.9em;
+                margin-bottom: 30px;
+            }
+
+            p{
+                color: @slate-300;
+                line-height: 1.6;
+                margin-bottom: 50px;
+            }
+
+            div{
+                margin-top: 20px;
+                padding: 30px;
+                background-color: #0E2431;
+                border-radius: 12px;
+                border-top: 4px solid @lime;
+
+                p{
+                    margin-top: 10px;
+                    color: @slate-300;
+                }
+
+                h1{
+                    margin: -50px 0 30px;
+                    color: @lime;
+                    font-size: 52px;
+                }
+
+                hr{
+                    border: 1px solid @slate-700;
+                    border-radius: 8px;
+                    margin-bottom: 35px;
+                }
+                
+                span{
+                    color: @white;
+                    margin-top: -45px;
+                    display: block;
+                    font-size: 24px
+                }
+            }
+        }
+
+        .hidden{
+            display: none;
+        }
+    }
+}
+
+.attribution{
+    font-size: 13px;
+    color: @slate-900;
+    margin: 20px auto;
+
+    a,
+    a:visited{
+        color: @slate-700;
+        text-decoration: none;
+    }
+}

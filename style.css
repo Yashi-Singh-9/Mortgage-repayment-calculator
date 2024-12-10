@@ -1,0 +1,312 @@
+@font-face {
+  font-family: "PlusJakartaSans-Bold";
+  src: url("assets/fonts/static/PlusJakartaSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PlusJakartaSans-Medium";
+  src: url("assets/fonts/static/PlusJakartaSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "PlusJakartaSans-Medium", sans-serif;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: hsl(202, 86%, 94%);
+}
+@media (max-width: 780px) {
+  body {
+    height: auto;
+  }
+}
+.wrapper {
+  display: flex;
+  border-radius: 25px;
+  overflow: hidden;
+  background-color: hsl(0, 0%, 100%);
+}
+@media (max-width: 780px) {
+  .wrapper {
+    flex-direction: column;
+    width: -webkit-fill-available;
+  }
+}
+.wrapper .calculator-container {
+  max-width: 560px;
+  padding: 40px;
+}
+@media (max-width: 780px) {
+  .wrapper .calculator-container {
+    max-width: none;
+  }
+}
+.wrapper .calculator-container .calculator-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.wrapper .calculator-container .calculator-header h2 {
+  color: hsl(202, 55%, 16%);
+  font-family: "PlusJakartaSans-Bold", sans-serif;
+  font-size: 30px;
+}
+.wrapper .calculator-container .calculator-header a {
+  color: hsl(200, 26%, 54%);
+  text-decoration: none;
+  border-bottom: 1px solid hsl(203, 41%, 72%);
+}
+.wrapper .calculator-container form .loanAmount {
+  margin-bottom: 20px;
+  position: relative;
+}
+.wrapper .calculator-container form .loanAmount label {
+  display: inline-block;
+  margin-bottom: 7px;
+  color: hsl(200, 24%, 40%);
+}
+.wrapper .calculator-container form .loanAmount div {
+  position: relative;
+}
+.wrapper .calculator-container form .loanAmount div input {
+  width: 100%;
+  padding: 10px 6px 10px 54px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 1px solid hsl(203, 41%, 72%);
+  overflow: hidden;
+}
+.wrapper .calculator-container form .loanAmount div input:focus,
+.wrapper .calculator-container form .loanAmount div input:hover {
+  outline: none;
+  border-color: hsl(61, 70%, 52%);
+}
+.wrapper .calculator-container form .loanAmount div input:focus + span,
+.wrapper .calculator-container form .loanAmount div input:hover + span {
+  background-color: hsl(61, 70%, 52%);
+}
+.wrapper .calculator-container form .loanAmount div span {
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  height: 95%;
+  background-color: hsl(202, 86%, 94%);
+  color: hsl(200, 24%, 40%);
+  padding: 7px 13px;
+  border: 8px;
+  font-weight: bold;
+}
+.wrapper .calculator-container form .loanDetails {
+  display: flex;
+  margin-bottom: 20px;
+  position: relative;
+}
+@media (max-width: 780px) {
+  .wrapper .calculator-container form .loanDetails {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+.wrapper .calculator-container form .loanDetails div:nth-child(1) {
+  margin-right: 10px;
+}
+.wrapper .calculator-container form .loanDetails label {
+  display: inline-block;
+  margin-bottom: 7px;
+  color: hsl(200, 24%, 40%);
+}
+.wrapper .calculator-container form .loanDetails input {
+  width: 100%;
+  font-size: 18px;
+  padding: 10px 6px 10px 12px;
+  border-radius: 8px;
+  border: 1px solid hsl(203, 41%, 72%);
+  overflow: hidden;
+}
+.wrapper .calculator-container form .loanDetails input:focus,
+.wrapper .calculator-container form .loanDetails input:hover {
+  outline: none;
+  border-color: hsl(61, 70%, 52%);
+}
+.wrapper .calculator-container form .loanDetails input:focus + span,
+.wrapper .calculator-container form .loanDetails input:hover + span {
+  background-color: hsl(61, 70%, 52%);
+}
+.wrapper .calculator-container form .loanDetails .details-group {
+  position: relative;
+}
+.wrapper .calculator-container form .loanDetails .details-group span {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  height: 95%;
+  padding: 7px 13px;
+  background-color: hsl(202, 86%, 94%);
+  border-radius: 0 4px 4px 0;
+  font-weight: bold;
+  color: hsl(200, 24%, 40%);
+}
+.wrapper .calculator-container form .mortgageOptions {
+  margin-bottom: 20px;
+}
+.wrapper .calculator-container form .mortgageOptions p {
+  margin-bottom: 10px;
+  color: hsl(200, 24%, 40%);
+}
+.wrapper .calculator-container form .mortgageOptions div {
+  position: relative;
+  width: 100%;
+  height: 47px;
+  margin-bottom: 30px;
+}
+.wrapper .calculator-container form .mortgageOptions div label {
+  border: 1px solid hsl(203, 41%, 72%);
+  display: block;
+  padding: 20px 8px 20px 45px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: bold;
+  color: hsl(202, 55%, 16%);
+}
+.wrapper .calculator-container form .mortgageOptions div label:hover {
+  border-color: hsl(61, 70%, 52%);
+}
+.wrapper .calculator-container form .mortgageOptions div input {
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  accent-color: hsl(61, 70%, 52%);
+}
+.wrapper .calculator-container form .mortgageOptions div input:checked + label {
+  border-color: hsl(61, 70%, 52%);
+  background-color: hsl(61, 70%, 82%);
+}
+.wrapper .calculator-container form .action-section {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.wrapper .calculator-container form .action-section button {
+  padding: 13px 30px 13px 60px;
+  border-radius: 40px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  background-color: hsl(61, 70%, 52%);
+  transition: all 0.2s;
+  color: hsl(202, 55%, 16%);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.wrapper .calculator-container form .action-section button:hover {
+  background-color: hsl(61, 70%, 72%);
+}
+@media (max-width: 780px) {
+  .wrapper .calculator-container form .action-section button {
+    margin: 0 auto;
+  }
+}
+.wrapper .output-section {
+  width: 500px;
+  background-color: hsl(202, 55%, 16%);
+  border-radius: 0 0 0 50px;
+}
+@media (max-width: 780px) {
+  .wrapper .output-section {
+    width: unset;
+    border-radius: 0;
+  }
+}
+.wrapper .output-section .initial-result {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (max-width: 780px) {
+  .wrapper .output-section .initial-result {
+    margin: 80px auto;
+  }
+}
+.wrapper .output-section .initial-result h2 {
+  color: hsl(0, 0%, 100%);
+  margin: 20px auto;
+}
+.wrapper .output-section .initial-result p {
+  color: hsl(203, 41%, 72%);
+  padding: 0 15px;
+  line-height: 1.5;
+}
+@media (max-width: 780px) {
+  .wrapper .output-section .initial-result p {
+    padding: 0 50px;
+  }
+}
+.wrapper .output-section .calculated-result {
+  padding: 40px;
+}
+.wrapper .output-section .calculated-result h2 {
+  color: hsl(0, 0%, 100%);
+  font-size: 1.9em;
+  margin-bottom: 30px;
+}
+.wrapper .output-section .calculated-result p {
+  color: hsl(203, 41%, 72%);
+  line-height: 1.6;
+  margin-bottom: 50px;
+}
+.wrapper .output-section .calculated-result div {
+  margin-top: 20px;
+  padding: 30px;
+  background-color: #0E2431;
+  border-radius: 12px;
+  border-top: 4px solid hsl(61, 70%, 52%);
+}
+.wrapper .output-section .calculated-result div p {
+  margin-top: 10px;
+  color: hsl(203, 41%, 72%);
+}
+.wrapper .output-section .calculated-result div h1 {
+  margin: -50px 0 30px;
+  color: hsl(61, 70%, 52%);
+  font-size: 52px;
+}
+.wrapper .output-section .calculated-result div hr {
+  border: 1px solid hsl(200, 24%, 40%);
+  border-radius: 8px;
+  margin-bottom: 35px;
+}
+.wrapper .output-section .calculated-result div span {
+  color: hsl(0, 0%, 100%);
+  margin-top: -45px;
+  display: block;
+  font-size: 24px;
+}
+.wrapper .output-section .hidden {
+  display: none;
+}
+.attribution {
+  font-size: 13px;
+  color: hsl(202, 55%, 16%);
+  margin: 20px auto;
+}
+.attribution a,
+.attribution a:visited {
+  color: hsl(200, 24%, 40%);
+  text-decoration: none;
+}
